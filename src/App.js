@@ -25,7 +25,7 @@ function App() {
   // Fetch all recipes
   const fetchAllRecipes = async () => {
     try {
-      const response = await fetch("/api/recipes");
+      const response = await fetch("http://deniselewis1120.pythonanywhere.com/api/recipes");
       if (response.ok) {
         const data = await response.json();
         setRecipes(data);
@@ -77,7 +77,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/recipes", {
+      const response = await fetch("http://deniselewis1120.pythonanywhere.com/api/recipes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -112,7 +112,7 @@ function App() {
     const { id } = selectedRecipe;
 
     try {
-      const response = await fetch(`/api/recipes/${id}`, {
+      const response = await fetch(`http://deniselewis1120.pythonanywhere.com/api/recipes/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -136,7 +136,7 @@ function App() {
   // Delete a recipe
   const handleDeleteRecipe = async (recipeId) => {
     try {
-      const response = await fetch(`/api/recipes/${recipeId}`, {
+      const response = await fetch(`http://deniselewis1120.pythonanywhere.com/api/recipes/${recipeId}`, {
         method: "DELETE"
       });
 
